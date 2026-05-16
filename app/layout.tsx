@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import Script from "next/script";
-import { Footer } from "@/components/marketing/Footer";
-import { Header } from "@/components/marketing/Header";
+import { MarketingChrome } from "@/components/marketing/MarketingChrome";
 import { JsonLd } from "@/components/marketing/JsonLd";
 import { SITE_URL } from "@/lib/constants";
 import {
@@ -73,9 +72,7 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         )}
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <MarketingChrome>{children}</MarketingChrome>
       </body>
     </html>
   );

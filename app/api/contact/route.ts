@@ -1,3 +1,4 @@
+import { createServiceSupabase } from "@/lib/supabase";
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
@@ -26,6 +27,19 @@ export async function POST(request: Request) {
       subject: `[Contact] ${subject}`,
       text: `From: ${name} <${email}>\n\n${message}`,
     });
+
+    const supabase = createServiceSupabase();
+    if (supabase) {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: name.trim(),
+        email: email.trim(),
+        subject: subject.trim(),
+        message: message.trim(),
+      });
+      if (error) {
+        console.error("[contact] supabase insert failed", error.message);
+      }
+    }
 
     return NextResponse.json({ ok: true });
   } catch {

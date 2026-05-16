@@ -7,16 +7,24 @@ import { ProblemSection } from "@/components/marketing/home/ProblemSection";
 import { SolutionSection } from "@/components/marketing/home/SolutionSection";
 import { StoriesSection } from "@/components/marketing/home/StoriesSection";
 import { TrustBar } from "@/components/marketing/home/TrustBar";
+import { getHeroContent, getTestimonials } from "@/lib/marketing-content";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const [hero, testimonials] = await Promise.all([
+    getHeroContent(),
+    getTestimonials(),
+  ]);
+
   return (
     <>
-      <Hero />
+      <Hero hero={hero} />
       <TrustBar />
       <ProblemSection />
       <SolutionSection />
       <FeatureShowcase />
-      <StoriesSection />
+      <StoriesSection testimonials={testimonials} />
       <PricingTeaser />
       <FaqSection />
       <FinalCta />
