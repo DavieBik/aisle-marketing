@@ -17,14 +17,13 @@ function isNavActive(pathname: string, href: string) {
 
 export function Header() {
   const pathname = usePathname();
-  const heroMode = pathname === "/";
   const session = useSessionStatus();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const authenticated = session === "authenticated";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -37,16 +36,13 @@ export function Header() {
     };
   }, [menuOpen]);
 
-  const solid = scrolled || !heroMode;
-
   return (
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          solid
-            ? "border-b border-sage/60 bg-cream/95 backdrop-blur-sm"
-            : "border-b border-transparent bg-transparent"
+          "sticky top-0 z-50 bg-cream transition-shadow duration-300",
+          scrolled &&
+            "border-b border-sage/60 shadow-[0_4px_24px_rgba(92,74,58,0.06)]"
         )}
       >
         <Container className="flex h-16 items-center justify-between lg:h-20">

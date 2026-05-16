@@ -7,6 +7,7 @@ import { ProblemSection } from "@/components/marketing/home/ProblemSection";
 import { SolutionSection } from "@/components/marketing/home/SolutionSection";
 import { StoriesSection } from "@/components/marketing/home/StoriesSection";
 import { TrustBar } from "@/components/marketing/home/TrustBar";
+import { Reveal } from "@/components/marketing/motion/Reveal";
 import { getHeroContent, getTestimonials } from "@/lib/marketing-content";
 
 export const revalidate = 60;
@@ -20,14 +21,30 @@ export default async function Home() {
   return (
     <>
       <Hero hero={hero} />
-      <TrustBar />
-      <ProblemSection />
-      <SolutionSection />
-      <FeatureShowcase />
-      <StoriesSection testimonials={testimonials} />
-      <PricingTeaser />
-      <FaqSection />
-      <FinalCta />
+      <Reveal>
+        <TrustBar />
+      </Reveal>
+      <Reveal>
+        <ProblemSection />
+      </Reveal>
+      <Reveal>
+        <SolutionSection />
+      </Reveal>
+      <Reveal>
+        <FeatureShowcase />
+      </Reveal>
+      <Reveal>
+        <StoriesSection testimonials={testimonials} />
+      </Reveal>
+      <Reveal>
+        <PricingTeaser />
+      </Reveal>
+      <Reveal>
+        <FaqSection />
+      </Reveal>
+      <Reveal>
+        <FinalCta />
+      </Reveal>
     </>
   );
 }

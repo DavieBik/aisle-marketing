@@ -1,9 +1,9 @@
 import { FinalCta } from "@/components/marketing/home/FinalCta";
-import { FeatureImages } from "@/components/marketing/features/FeatureImages";
+import { FeatureArticles } from "@/components/marketing/features/FeatureArticles";
 import { FeatureNav } from "@/components/marketing/features/FeatureNav";
 import { PageShell } from "@/components/marketing/PageShell";
 import { Container } from "@/components/ui/Container";
-import { getFeatureImages, getFeatureWithDetails } from "@/lib/feature-details";
+import { getFeatureWithDetails } from "@/lib/feature-details";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,44 +35,7 @@ export default function FeaturesPage() {
         <Container>
           <div className="flex gap-16">
             <FeatureNav />
-            <div className="min-w-0 flex-1 space-y-12 lg:space-y-16">
-              {features.map((feature) => {
-                const { hero, extras } = getFeatureImages(feature);
-                return (
-                  <article
-                    key={feature.id}
-                    id={`feature-${feature.id}`}
-                    className="scroll-mt-28 border-b border-sage/50 pb-12 last:border-0 lg:pb-16"
-                  >
-                    <p className="mb-3 font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
-                      {feature.eyebrow}
-                    </p>
-                    <h2 className="font-cormorant text-4xl leading-tight text-ink lg:text-5xl">
-                      {feature.heading}
-                    </h2>
-                    <p className="mt-6 font-outfit text-base leading-relaxed text-muted">
-                      {feature.body}
-                    </p>
-                    <FeatureImages hero={hero} extras={extras} />
-                    <aside className="mt-10 rounded-2xl bg-cream p-8">
-                      <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
-                        What couples use this for
-                      </p>
-                      <ul className="mt-4 space-y-3">
-                        {feature.scenarios.map((s) => (
-                          <li
-                            key={s}
-                            className="font-outfit text-[15px] leading-relaxed text-ink"
-                          >
-                            {s}
-                          </li>
-                        ))}
-                      </ul>
-                    </aside>
-                  </article>
-                );
-              })}
-            </div>
+            <FeatureArticles features={features} />
           </div>
         </Container>
       </section>

@@ -48,6 +48,38 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     updated_at: new Date().toISOString(),
     updated_by: null,
   },
+  {
+    id: "fallback-4",
+    display_order: 4,
+    quote:
+      "We finally had one place that held the four ceremonies, the three sides of family, and the one thing nobody wanted to forget.",
+    author_name: "Wanjiru and Kwame",
+    author_role: "Married Aug 2027",
+    author_photo_url: null,
+    updated_at: new Date().toISOString(),
+    updated_by: null,
+  },
+  {
+    id: "fallback-5",
+    display_order: 5,
+    quote:
+      "My grandmother is on the committee from a different time zone and somehow it just works.",
+    author_name: "Aanya and Theo",
+    author_role: "Married Mar 2027",
+    author_photo_url: null,
+    updated_at: new Date().toISOString(),
+    updated_by: null,
+  },
+  {
+    id: "fallback-6",
+    display_order: 6,
+    quote: "I stopped having seven group chats. That alone was worth it.",
+    author_name: "Léa and Sam",
+    author_role: "Married Jul 2027",
+    author_photo_url: null,
+    updated_at: new Date().toISOString(),
+    updated_by: null,
+  },
 ];
 
 export async function getHeroContent(): Promise<HeroContent> {

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { BotanicalPattern } from "@/components/marketing/BotanicalPattern";
+import { HeroParallaxImage } from "@/components/marketing/home/HeroParallaxImage";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { appUrl } from "@/lib/constants";
@@ -77,18 +77,16 @@ export function Hero({ hero = DEFAULT_HERO }: { hero?: HeroContent }) {
             </p>
           </div>
 
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm lg:aspect-auto lg:min-h-[520px]">
-            {/* TODO: replace with commissioned shot of hands using the app in a boutique wedding setting */}
-            <Image
-              src={useLocalPath && imageSrc === "/images/hero-rings.jpg" ? DEFAULT_HERO_IMAGE : imageSrc}
-              alt="Wedding invitation flat lay with calligraphy and soft natural light"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              priority
-              unoptimized={imageSrc.includes("supabase.co")}
-            />
-          </div>
+          <HeroParallaxImage
+            src={
+              useLocalPath && imageSrc === "/images/hero-rings.jpg"
+                ? DEFAULT_HERO_IMAGE
+                : imageSrc
+            }
+            alt="Wedding invitation flat lay with calligraphy and soft natural light"
+            priority
+            unoptimized={imageSrc.includes("supabase.co")}
+          />
         </div>
       </Container>
     </section>
