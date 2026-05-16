@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/marketing/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { NAV_LINKS, appUrl } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
-export function Header({ heroMode = false }: { heroMode?: boolean }) {
+export function Header() {
+  const pathname = usePathname();
+  const heroMode = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
