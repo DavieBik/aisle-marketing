@@ -42,8 +42,8 @@ export function Hero() {
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm lg:aspect-auto lg:min-h-[520px]">
             {/* TODO: replace with commissioned shot of hands using the app in a boutique wedding setting */}
             <Image
-              src="https://images.pexels.com/photos/1024991/pexels-photo-1024991.jpeg?auto=compress&cs=tinysrgb&w=900"
-              alt="Wedding invitation flat lay with ribbon, flowers, and soft natural light"
+              src="https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Wedding invitation flat lay with calligraphy and soft natural light"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 45vw"
