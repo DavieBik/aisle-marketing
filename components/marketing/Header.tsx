@@ -6,14 +6,17 @@ import { usePathname } from "next/navigation";
 import { Logo } from "@/components/marketing/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { NAV_LINKS, appUrl } from "@/lib/constants";
+import { NAV_LINKS, APP_URL, UTM_PARAMS, appUrl } from "@/lib/constants";
 import { cn } from "@/lib/cn";
+import { useSessionStatus } from "@/hooks/useSessionStatus";
 
 export function Header() {
   const pathname = usePathname();
   const heroMode = pathname === "/";
+  const session = useSessionStatus();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const authenticated = session === "authenticated";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -60,21 +63,32 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Button
-              variant="ghost"
-              href={appUrl("/sign-in")}
-              className="py-2.5 text-sm"
-              data-plausible-event="cta_signin_clicked"
-            >
-              Sign in
-            </Button>
-            <Button
-              href={appUrl("/sign-up")}
-              className="py-2.5 text-sm"
-              data-plausible-event="cta_get_started_clicked"
-            >
-              Get started
-            </Button>
+            {authenticated ? (
+              <Button
+                href={`${APP_URL}?${UTM_PARAMS}`}
+                className="py-2.5 text-sm"
+              >
+                Open the app
+              </Button>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  href={appUrl("/sign-in")}
+                  className="py-2.5 text-sm"
+                  data-plausible-event="cta_signin_clicked"
+                >
+                  Sign in
+                </Button>
+                <Button
+                  href={appUrl("/sign-up")}
+                  className="py-2.5 text-sm"
+                  data-plausible-event="cta_get_started_clicked"
+                >
+                  Get started
+                </Button>
+              </>
+            )}
           </div>
 
           <button
@@ -125,16 +139,30 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-8 flex flex-col items-center gap-4">
-            <Button
-              variant="ghost"
-              href={appUrl("/sign-in")}
-              onClick={() => setMenuOpen(false)}
-            >
-              Sign in
-            </Button>
-            <Button href={appUrl("/sign-up")} onClick={() => setMenuOpen(false)}>
-              Get started
-            </Button>
+            {authenticated ? (
+              <Button
+                href={`${APP_URL}?${UTM_PARAMS}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                Open the app
+              </Button>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  href={appUrl("/sign-in")}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Sign in
+                </Button>
+                <Button
+                  href={appUrl("/sign-up")}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Get started
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>
