@@ -2,94 +2,87 @@ import { PageShell } from "@/components/marketing/PageShell";
 import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { appUrl } from "@/lib/constants";
 import type { Metadata } from "next";
+
+const SIGNUP_URL = "https://app.theaisleapp.com/signup";
 
 const PRICING_FAQ = [
   {
-    question: "Will I always be free if I sign up during launch?",
-    answer:
-      "Yes. Couples who join during launch keep access to the core wedding home at no charge. We will introduce paid tiers later, but not for couples already with us.",
-  },
-  {
-    question: "What will paid tiers include?",
-    answer:
-      "Premium features for couples and, eventually, plans for vendors and planners. Details will be announced before anything changes for existing couples.",
-  },
-  {
     question: "Do I need a credit card to start?",
-    answer: "No. You can create your wedding home today without payment details.",
+    answer:
+      "No. Start your 7-day trial without payment details. You can cancel any time during the trial.",
   },
   {
-    question: "What is included in the couple plan?",
+    question: "What happens when my trial ends?",
     answer:
-      "Everything you need to hold your wedding: guests, ceremonies, registry, committee, events, stationery, collaborators, emails, and budget.",
+      "We will share subscription options before your trial ends. You choose whether to continue. Nothing is charged without your consent.",
   },
   {
-    question: "When will vendor and planner plans launch?",
+    question: "Can I cancel during the trial?",
+    answer: "Yes. Cancel any time during your 7-day trial with no charge.",
+  },
+  {
+    question: "What is included?",
     answer:
-      "They are coming soon. Join the waitlist by contacting us if you are a vendor or planner interested in early access.",
+      "Full access to every feature: guests, ceremonies, registry, committee, events, stationery, collaborators, emails, and budget. Invite your partner, family, and collaborators.",
   },
 ] as const;
 
 export const metadata: Metadata = {
   title: "Pricing | The Aisle App",
   description:
-    "Free during launch. The Aisle App is free for couples organizing a wedding right now.",
+    "Try every part of The Aisle App for 7 days. No credit card. No setup time.",
 };
 
 export default function PricingPage() {
   return (
     <PageShell>
-      <section className="bg-cream py-16 lg:py-24">
+      <section className="bg-cream py-16 lg:py-20">
         <Container className="max-w-2xl text-center">
           <h1 className="font-cormorant text-[clamp(2.25rem,4.5vw,3.5rem)] text-ink">
-            Free during launch.
+            Try every part of The Aisle App for 7 days.
           </h1>
           <p className="mt-6 font-outfit text-lg text-muted">
-            We&apos;re keeping The Aisle App free for everyone planning a
-            wedding right now. Paid tiers will come, but never for couples
-            already using us free.
+            No credit card. No setup time. Cancel any time during your trial.
           </p>
         </Container>
       </section>
 
-      <section className="bg-ivory pb-20 lg:pb-32">
-        <Container className="grid max-w-4xl gap-8 md:grid-cols-2">
+      <section className="bg-ivory pb-16 lg:pb-24">
+        <Container className="max-w-md">
           <article className="rounded-2xl bg-ivory p-10 shadow-[0_4px_32px_rgba(92,74,58,0.08)] ring-1 ring-sage/60">
-            <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
-              Couple plan
+            <p className="font-cormorant text-3xl text-ink">The Aisle App</p>
+            <p className="mt-2 font-outfit text-sm font-medium text-brass">
+              7-day free trial
             </p>
-            <p className="mt-4 font-cormorant text-5xl text-ink">Free</p>
-            <p className="mt-2 font-outfit text-sm text-muted">During launch</p>
-            <ul className="mt-8 space-y-3 font-outfit text-sm text-ink">
-              <li>Guests and ceremonies</li>
-              <li>Registry and gifts tracking</li>
-              <li>Committee meetings and minutes</li>
-              <li>Pre-wedding events</li>
-              <li>Stationery and boutique emails</li>
-              <li>Collaborators with custom access</li>
-              <li>Budget in any currency</li>
-            </ul>
+            <p className="mt-6 font-outfit text-[15px] leading-relaxed text-muted">
+              Full access to every feature. Invite your partner, your family,
+              your collaborators. Bring your whole wedding home.
+            </p>
             <div className="mt-10">
-              <Button href={appUrl("/sign-up")} className="w-full justify-center">
-                Get started free
+              <Button href={SIGNUP_URL} className="w-full justify-center">
+                Start your trial
               </Button>
             </div>
           </article>
+        </Container>
 
-          <article className="rounded-2xl border border-sage/60 bg-cream/50 p-10 opacity-70">
-            <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-muted">
-              Coming soon
-            </p>
-            <p className="mt-4 font-cormorant text-3xl text-muted">
-              Vendor and planner plans
-            </p>
-            <p className="mt-4 font-outfit text-sm leading-relaxed text-muted">
-              For florists, planners, venues, and others who support weddings
-              every day. We will share details when the time is right.
-            </p>
-          </article>
+        <Container className="mt-20 max-w-2xl text-center">
+          <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
+            FOUNDING COUPLES
+          </p>
+          <h2 className="mt-4 font-cormorant text-3xl text-ink">
+            A discount for couples joining us early.
+          </h2>
+          <p className="mt-4 font-outfit text-[15px] leading-relaxed text-muted">
+            If your wedding is in the first wave with us, we&apos;d love to look
+            after you. Contact us for founding-couples pricing.
+          </p>
+          <div className="mt-8">
+            <Button variant="ghost" href="/contact">
+              Contact us
+            </Button>
+          </div>
         </Container>
 
         <Container className="mt-20 max-w-2xl">
@@ -97,6 +90,9 @@ export default function PricingPage() {
             Pricing questions
           </h2>
           <Accordion items={PRICING_FAQ} />
+          <p className="mt-12 text-center font-outfit text-sm text-muted">
+            Vendors and venues, coming later.
+          </p>
         </Container>
       </section>
     </PageShell>
