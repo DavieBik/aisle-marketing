@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 
 export function SolutionSection() {
   return (
-    <section className="bg-cream py-20 lg:py-32">
+    <section className="bg-cream py-16 lg:py-20">
       <Container className="max-w-3xl text-center">
         <SectionHeading
           eyebrow="The new way"
@@ -31,11 +31,11 @@ export function SolutionSection() {
           </p>
         </div>
 
-        <div className="relative mt-16 aspect-[21/9] w-full overflow-hidden rounded-sm">
-          {/* TODO: commissioned flat lay */}
+        <div className="relative mt-10 aspect-[21/9] w-full overflow-hidden rounded-sm">
+          {/* TODO: replace with commissioned shot of wedding dining table */}
           <Image
-            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1400&q=80"
-            alt="Styled flat lay of wedding invitations, ribbon, dried flowers, and vintage pen"
+            src="https://images.unsplash.com/photo-1519225426285-abb61fc38eb4?w=1400&q=80"
+            alt="Long wedding reception table with candlelight, place settings, and warm ambient light"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 896px"

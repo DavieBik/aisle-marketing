@@ -40,14 +40,26 @@ export function FeatureShowcase() {
                       imageLeft ? "lg:col-start-1" : "lg:col-start-6"
                     )}
                   >
-                    {/* TODO: replace with commissioned lifestyle photography where noted */}
-                    <Image
-                      src={feature.image.src}
-                      alt={feature.image.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 60vw"
-                    />
+                    {feature.id === "committee" ? (
+                      <>
+                        {/* TODO: replace with commissioned shot of wedding planning committee */}
+                        <Image
+                          src={feature.image.src}
+                          alt={feature.image.alt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 60vw"
+                        />
+                      </>
+                    ) : (
+                      <Image
+                        src={feature.image.src}
+                        alt={feature.image.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                      />
+                    )}
                   </div>
 
                   <div className="lg:col-span-5">

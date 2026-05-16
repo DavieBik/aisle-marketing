@@ -29,7 +29,7 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="bg-ivory py-20 lg:py-32">
+    <section className="bg-ivory py-16 lg:py-20">
       <Container>
         <SectionHeading
           eyebrow="The old way"
@@ -56,7 +56,7 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <p className="mt-20 text-center font-cormorant text-[22px] italic text-ink lg:mt-24">
+        <p className="mt-12 text-center font-cormorant text-[22px] italic text-ink lg:mt-14">
           There is a quieter way.
         </p>
       </Container>

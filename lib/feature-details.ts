@@ -44,8 +44,8 @@ export const FEATURE_DETAILS: Record<string, FeatureDetail> = {
     ],
     extraImages: [
       {
-        src: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800",
-        alt: "Coffee and notebook after a meeting",
+        src: "https://images.pexels.com/photos/4262179/pexels-photo-4262179.jpeg?auto=compress&cs=tinysrgb&w=800",
+        alt: "Family and friends gathered around a dining table planning together",
       },
     ],
   },

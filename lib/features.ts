@@ -44,8 +44,8 @@ export const FEATURES: Feature[] = [
     heading: "For weddings that take a village to plan.",
     body: "Run committee meetings without the chaos. Capture the minutes. Track the pledges, the fines, the auctions. Distribute meeting notes to attendees by email or shareable link. For weddings where planning is a community effort, not a solo project.",
     image: {
-      src: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Notebook and coffee cups on a table after a meeting, soft light",
+      src: "https://images.pexels.com/photos/4262179/pexels-photo-4262179.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      alt: "Family and friends gathered around a dining table planning together in warm light",
       width: 1200,
       height: 800,
     },
@@ -112,58 +112,7 @@ export const FEATURES: Feature[] = [
   },
 ];
 
-export const HOME_FAQ = [
-  {
-    question: "Is The Aisle App free?",
-    answer:
-      "Yes. The Aisle App is free for couples during our launch. You can start today without a credit card. Premium features will arrive later, but your wedding home will always be free to start.",
-  },
-  {
-    question: "Does The Aisle App handle gift money?",
-    answer:
-      "No. Your guests pay you directly using the payment methods you choose, from bank transfer to mobile money to PayPal. We help you track pledges and thank-yous. We never hold your money.",
-  },
-  {
-    question: "Can my partner and I share an account?",
-    answer:
-      "Yes. You and your partner share one wedding home. You both see the same guests, ceremonies, and details, with the access you choose for each other.",
-  },
-  {
-    question: "Can I invite my mum, planner, florist, or maid of honour?",
-    answer:
-      "Yes. Invite anyone helping with your wedding as a collaborator. You choose their title and exactly what they can see, from committee finances to a single pre-wedding event.",
-  },
-  {
-    question: "Is there a mobile app?",
-    answer:
-      "The Aisle App works beautifully in your phone's browser today. Native apps are on our roadmap.",
-  },
-  {
-    question: "What languages does The Aisle App support?",
-    answer:
-      "English and French at launch. More languages will follow as we grow.",
-  },
-  {
-    question: "Where is my data stored?",
-    answer:
-      "Your data is stored securely in encrypted cloud infrastructure. We use industry-standard providers and never sell your information.",
-  },
-  {
-    question: "Can I export everything if I want to?",
-    answer:
-      "Yes. Your wedding is yours. You can export your data whenever you need it.",
-  },
-  {
-    question: "Does The Aisle App work for our wedding tradition?",
-    answer:
-      "Yes. Whether your wedding has one ceremony or several, a small guest list or hundreds across continents, The Aisle App is built for the way weddings actually unfold.",
-  },
-  {
-    question: 'What does "beautifully kept" mean?',
-    answer:
-      "It means your wedding details are held with care. Organized without feeling corporate. Clear without feeling cold. A quiet home for everything that matters.",
-  },
-] as const;
+export { MARKETING_FAQ as HOME_FAQ } from "./faq-content";
 
 export const TESTIMONIALS = [
   {

@@ -172,11 +172,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/press" className="hover:text-brass text-muted/60 pointer-events-none">
-                  Press
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-brass">
                   Contact
                 </Link>
