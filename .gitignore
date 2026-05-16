@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# dev screenshots
+/public/screenshots/
+
 # production
 /build
 
