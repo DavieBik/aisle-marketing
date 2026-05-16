@@ -10,6 +10,11 @@ import { NAV_LINKS, APP_URL, UTM_PARAMS, appUrl } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 import { useSessionStatus } from "@/hooks/useSessionStatus";
 
+function isNavActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Header() {
   const pathname = usePathname();
   const heroMode = pathname === "/";
@@ -55,7 +60,10 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-outfit text-sm text-ink transition-colors hover:text-brass"
+                className={cn(
+                  "font-outfit text-sm transition-colors hover:text-brass",
+                  isNavActive(pathname, link.href) ? "text-brass" : "text-ink"
+                )}
               >
                 {link.label}
               </Link>

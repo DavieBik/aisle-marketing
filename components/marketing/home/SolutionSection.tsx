@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 
 export function SolutionSection() {
   return (
-    <section className="bg-cream py-16 lg:py-20">
+    <section className="bg-cream py-10 lg:py-12">
       <Container className="max-w-3xl text-center">
         <SectionHeading
           eyebrow="The new way"
@@ -31,7 +31,7 @@ export function SolutionSection() {
           </p>
         </div>
 
-        <div className="relative mt-10 aspect-[21/9] w-full overflow-hidden rounded-sm">
+        <div className="relative mt-6 aspect-[21/9] w-full overflow-hidden rounded-sm">
           {/* TODO: replace with commissioned shot of wedding dining table */}
           <Image
             src="https://images.unsplash.com/photo-1519225426285-abb61fc38eb4?w=1400&q=80"

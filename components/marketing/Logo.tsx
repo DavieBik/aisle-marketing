@@ -4,17 +4,28 @@ import { cn } from "@/lib/cn";
 type LogoProps = {
   className?: string;
   asLink?: boolean;
+  size?: "header" | "display";
 };
 
-export function Logo({ className, asLink = true }: LogoProps) {
+export function Logo({
+  className,
+  asLink = true,
+  size = "header",
+}: LogoProps) {
+  const theAppSize = size === "display" ? "text-lg" : "text-base";
+  const aisleSize =
+    size === "display" ? "text-4xl leading-none" : "text-2xl leading-none";
+
   const mark = (
     <span
       className={cn(
-        "font-cormorant text-2xl leading-none text-ink",
+        "font-cormorant italic text-brass-dark inline-flex items-baseline gap-1",
         className
       )}
     >
-      The <span className="italic">Aisle</span> App
+      <span className={theAppSize}>The</span>
+      <span className={aisleSize}>Aisle</span>
+      <span className={theAppSize}>App</span>
     </span>
   );
 

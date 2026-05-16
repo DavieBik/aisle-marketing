@@ -107,7 +107,7 @@ export function Footer() {
 
         <div className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <Logo asLink={false} />
+            <Logo asLink={false} size="display" />
             <p className="mt-4 font-cormorant text-lg italic text-muted">
               Your wedding&apos;s beautiful home.
             </p>
@@ -205,8 +205,7 @@ export function Footer() {
 
         <div className="mt-16 border-t border-sage pt-8 text-center">
           <p className="font-outfit text-xs leading-relaxed text-muted">
-            © 2026 Nuru Technologies Pty Ltd. Made with care in Melbourne, for
-            couples everywhere.
+            © 2026 Nuru Technologies Pty Ltd.
           </p>
         </div>
       </Container>

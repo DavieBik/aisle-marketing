@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 export default function StoryPage() {
   return (
     <PageShell className="bg-cream">
-      <Container className="max-w-2xl py-16 lg:py-24">
+      <Container className="max-w-2xl py-10 lg:py-14">
         <h1 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] leading-tight text-ink">
           We built The Aisle App for every wedding we have known.
         </h1>
 
-        <div className="mt-12 space-y-6 font-outfit text-[17px] leading-[1.75] text-ink">
+        <div className="mt-8 space-y-5 font-outfit text-[17px] leading-[1.75] text-ink">
           <p>
             We&apos;re Nuru Technologies, the people behind The Aisle App.
           </p>
@@ -38,7 +38,7 @@ export default function StoryPage() {
           </p>
         </div>
 
-        <div className="relative my-16 aspect-[16/10] overflow-hidden rounded-sm">
+        <div className="relative my-8 aspect-[16/10] overflow-hidden rounded-sm">
           {/* TODO: commissioned imagery OR appropriate lifestyle stock photography */}
           <Image
             src="https://images.unsplash.com/photo-1516589178581-6cd7423ead9a?w=1200&q=80"
@@ -49,7 +49,7 @@ export default function StoryPage() {
           />
         </div>
 
-        <div className="space-y-6 font-outfit text-[17px] leading-[1.75] text-ink">
+        <div className="space-y-5 font-outfit text-[17px] leading-[1.75] text-ink">
           <p>
             The Aisle App is the wedding home everyone should have, or wishes
             they had. For our own weddings,             and for every couple planning theirs.

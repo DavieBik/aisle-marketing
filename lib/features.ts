@@ -3,7 +3,7 @@ export type Feature = {
   eyebrow: string;
   heading: string;
   body: string;
-  image: {
+  image?: {
     src: string;
     alt: string;
     width: number;
@@ -27,6 +27,30 @@ export const FEATURES: Feature[] = [
     imageTodo: "guestbook open with fountain pen, soft morning light",
   },
   {
+    id: "ceremonies",
+    eyebrow: "CEREMONIES",
+    heading: "Every ceremony, its own world.",
+    body: "Some weddings are one event. Others are five. Each ceremony in The Aisle App holds its own guest list, seating, dietary notes, timeline, and traditions. Bring all of them under one roof without making any of them smaller.",
+    image: {
+      src: "https://images.pexels.com/photos/1024991/pexels-photo-1024991.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      alt: "Wedding ceremony with candles and warm natural light",
+      width: 1200,
+      height: 800,
+    },
+  },
+  {
+    id: "committee",
+    eyebrow: "COMMITTEES",
+    heading: "For weddings that take a village to plan.",
+    body: "Run committee meetings without the chaos. Capture the minutes. Track the pledges, the fines, the auctions. Distribute meeting notes to attendees by email or shareable link. For weddings where planning is a community effort, not a solo project.",
+    image: {
+      src: "https://images.pexels.com/photos/4262179/pexels-photo-4262179.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      alt: "Family and friends gathered around a dining table planning together in warm light",
+      width: 1200,
+      height: 800,
+    },
+  },
+  {
     id: "registry",
     eyebrow: "REGISTRY",
     heading: "A registry built for the way gifts actually happen.",
@@ -39,25 +63,14 @@ export const FEATURES: Feature[] = [
     },
   },
   {
-    id: "committee",
-    eyebrow: "COMMITTEE",
-    heading: "For weddings that take a village to plan.",
-    body: "Run committee meetings without the chaos. Capture the minutes. Track the pledges, the fines, the auctions. Distribute meeting notes to attendees by email or shareable link. For weddings where planning is a community effort, not a solo project.",
+    id: "budget",
+    eyebrow: "BUDGET",
+    heading:
+      'TBC is a valid amount. So is any currency, any figure, any "still figuring it out".',
+    body: "Track every dollar and every pledge in whatever currency, whatever phase. From rough estimates to firm quotes to final spend. Free-text amounts that work the way real wedding budgets actually unfold.",
     image: {
-      src: "https://images.pexels.com/photos/4262179/pexels-photo-4262179.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Family and friends gathered around a dining table planning together in warm light",
-      width: 1200,
-      height: 800,
-    },
-  },
-  {
-    id: "events",
-    eyebrow: "EVENTS",
-    heading: "Bridal showers. Hen dos. Every milestone before the day.",
-    body: "Track every event leading up to your wedding. Each has its own guest list, host, photographs, and quiet history. Hide your bridal shower from your partner if you'd like a surprise. Invite the host as a collaborator with access to just that event.",
-    image: {
-      src: "https://images.pexels.com/photos/1024991/pexels-photo-1024991.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Bridal shower invitation flat lay with ribbon and flowers",
+      src: "https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      alt: "Notebook with handwritten budget figures and vintage pen",
       width: 1200,
       height: 800,
     },
@@ -66,7 +79,7 @@ export const FEATURES: Feature[] = [
     id: "stationery",
     eyebrow: "STATIONERY",
     heading: "Designed by you. Delivered with grace.",
-    body: "Design your save the dates and invitations in Canva. Upload them to The Aisle App. We deliver them as beautiful boutique emails, or generate links you can share by text. Every email that goes out feels like part of your wedding suite.",
+    body: "Design your invitations and signage your way. Canva, Figma, your designer, your sister's iPad — whatever you bring, we hold it. Upload to The Aisle App, give every email and printed touch a single visual voice, share with your guests as one beautiful set.",
     image: {
       src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80",
       alt: "Wedding invitation styled on a textured table with eucalyptus",
@@ -75,37 +88,25 @@ export const FEATURES: Feature[] = [
     },
   },
   {
-    id: "collaborators",
-    eyebrow: "COLLABORATORS",
-    heading: "Your maid of honour. Your secretary. Your florist. All helping.",
-    body: "Invite anyone who's helping with your wedding. Give them their own title, you choose what to call them. Give them exactly the access they need. Your treasurer sees the committee finances but not your honeymoon budget. Your bridesmaid sees the bridal shower she's hosting but not your private notes.",
-    image: {
-      src: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Two friends sharing coffee in soft natural light",
-      width: 1200,
-      height: 800,
-    },
-  },
-  {
-    id: "emails",
-    eyebrow: "EMAILS",
-    heading: "Every message you send feels like part of your wedding.",
-    body: "Six hand-designed templates plus the option to use your own Canva design as the header. Reminders, RSVP confirmations, thank-yous, and committee notes all dressed in your wedding's visual language. Restraint over volume. Beauty over noise.",
+    id: "timeline",
+    eyebrow: "TIMELINE",
+    heading: "The day, held by the hour.",
+    body: "A run sheet that knows who arrives when, who's responsible for what, and which moments cannot slip. Share it with vendors, the bridal party, parents. Print it for the day. The wedding holds itself.",
     image: {
       src: "https://images.pexels.com/photos/5717412/pexels-photo-5717412.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Phone on a wedding-styled table with coffee cup, soft morning light",
+      alt: "Wedding day schedule and clock in warm morning light",
       width: 1200,
       height: 800,
     },
   },
   {
-    id: "budget",
-    eyebrow: "BUDGET",
-    heading: "TBC is a valid amount. So is 450,000 UGX. So is $30.",
-    body: "Track every dollar and every pledge in whatever currency, whatever phase. From rough estimates to firm quotes to final spend. Free-text amounts that work the way real wedding budgets actually unfold.",
+    id: "moments",
+    eyebrow: "MOMENTS",
+    heading: "Your wedding remembers itself.",
+    body: "The first vendor booked. The hundredth day to go. The last RSVP in. The Aisle App quietly notices and keeps a record of every small milestone that makes the year of getting married feel real.",
     image: {
       src: "https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Notebook with handwritten budget figures and vintage pen",
+      alt: "Wedding journal with handwritten notes in warm light",
       width: 1200,
       height: 800,
     },

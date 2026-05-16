@@ -5,6 +5,7 @@ export const APP_SIGN_UP = `${APP_URL}/sign-up`;
 export const SITE_URL = "https://theaisleapp.com";
 
 export const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
   { href: "/story", label: "Story" },
   { href: "/pricing", label: "Pricing" },

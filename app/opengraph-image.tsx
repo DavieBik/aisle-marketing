@@ -32,17 +32,20 @@ export default function OgImage() {
             opacity: 0.6,
           }}
         />
-        <p
+        <div
           style={{
-            fontSize: 28,
-            color: "#C9A876",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
+            display: "flex",
+            alignItems: "baseline",
+            gap: 8,
             marginBottom: 24,
+            fontStyle: "italic",
+            color: "#A8895E",
           }}
         >
-          The Aisle App
-        </p>
+          <span style={{ fontSize: 28 }}>The</span>
+          <span style={{ fontSize: 48, lineHeight: 1 }}>Aisle</span>
+          <span style={{ fontSize: 28 }}>App</span>
+        </div>
         <p
           style={{
             fontSize: 64,

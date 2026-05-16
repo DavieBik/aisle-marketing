@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { SectionHeading } from "@/components/marketing/SectionHeading";
 import { Container } from "@/components/ui/Container";
-import {
-  FALLBACK_TESTIMONIALS,
-  isPlaceholderTestimonial,
-} from "@/lib/marketing-content";
+import { FALLBACK_TESTIMONIALS } from "@/lib/marketing-content";
 import type { Testimonial } from "@/lib/supabase";
 
 function initials(name: string) {
@@ -22,14 +19,14 @@ export function StoriesSection({
   testimonials?: Testimonial[];
 }) {
   return (
-    <section className="bg-cream py-20 lg:py-32">
+    <section className="bg-cream py-12 lg:py-16">
       <Container>
         <SectionHeading
           eyebrow="Stories"
           title="Couples planning beautifully."
         />
 
-        <div className="grid gap-8 md:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((t) => (
             <article
               key={t.id}
@@ -47,17 +44,7 @@ export function StoriesSection({
                   />
                 </div>
               ) : (
-                <div
-                  className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-sage font-cormorant text-lg text-ink"
-                  aria-hidden
-                >
-                  {initials(t.author_name)}
-                </div>
-              )}
-              {isPlaceholderTestimonial(t) && (
-                <p className="mb-3 font-outfit text-[10px] uppercase tracking-widest text-muted">
-                  Placeholder
-                </p>
+                <div />
               )}
               <blockquote className="font-cormorant text-[19px] italic leading-relaxed text-ink">
                 &ldquo;{t.quote}&rdquo;

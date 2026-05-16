@@ -5,7 +5,7 @@ import { appUrl } from "@/lib/constants";
 
 export function PricingTeaser() {
   return (
-    <section className="bg-ivory py-20 lg:py-32">
+    <section className="bg-ivory py-12 lg:py-16">
       <Container className="max-w-2xl text-center">
         <SectionHeading
           eyebrow="Pricing"

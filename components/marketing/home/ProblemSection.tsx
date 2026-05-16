@@ -29,7 +29,7 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="bg-ivory py-16 lg:py-20">
+    <section className="bg-ivory py-10 lg:py-12">
       <Container>
         <SectionHeading
           eyebrow="The old way"
@@ -42,7 +42,7 @@ export function ProblemSection() {
           titleClassName="text-[clamp(2.25rem,4.5vw,3.25rem)]"
         />
 
-        <div className="mt-4 grid gap-16 md:grid-cols-3 md:gap-10 lg:gap-14">
+        <div className="mt-4 grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-10">
           {problems.map(({ Illustration, title, description }) => (
             <div key={title} className="text-center">
               <Illustration />
@@ -56,7 +56,7 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <p className="mt-12 text-center font-cormorant text-[22px] italic text-ink lg:mt-14">
+        <p className="mt-8 text-center font-cormorant text-[22px] italic text-ink lg:mt-10">
           There is a quieter way.
         </p>
       </Container>

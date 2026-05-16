@@ -4,7 +4,7 @@ import { appUrl } from "@/lib/constants";
 
 export function FinalCta() {
   return (
-    <section className="bg-sand-warm py-20 lg:py-32">
+    <section className="bg-sand-warm py-12 lg:py-16">
       <Container className="text-center">
         <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] italic leading-tight text-ink">
           Your wedding deserves a beautiful home.

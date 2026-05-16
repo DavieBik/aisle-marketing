@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 
 export function TrustBar() {
   return (
-    <section className="border-b border-sage/40 bg-cream py-6 lg:py-8">
+    <section className="border-b border-sage/40 bg-cream py-4 lg:py-5">
       <Container>
         <p className="text-center font-cormorant text-lg italic leading-relaxed text-muted lg:text-xl">
           Crafted by people who have lived weddings. Built for the couples
