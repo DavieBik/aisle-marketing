@@ -69,10 +69,10 @@ export const FEATURES: Feature[] = [
       'TBC is a valid amount. So is any currency, any figure, any "still figuring it out".',
     body: "Track every dollar and every pledge in whatever currency, whatever phase. From rough estimates to firm quotes to final spend. Free-text amounts that work the way real wedding budgets actually unfold.",
     image: {
-      src: "https://images.pexels.com/photos/4389416/pexels-photo-4389416.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Wedding rings and flowers on a cream planning table",
-      width: 1200,
-      height: 800,
+      src: "/images/budget.png",
+      alt: "A wedding budget planner clipboard, piggy bank, coffee and planning notes on a white desk",
+      width: 1563,
+      height: 1563,
     },
   },
   {
