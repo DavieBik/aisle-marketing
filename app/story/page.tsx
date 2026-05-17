@@ -61,13 +61,11 @@ export default function StoryPage() {
           {/* TODO: founder review and final copy refinement */}
         </div>
 
-        <p className="mx-auto mt-16 max-w-xl text-center font-outfit text-sm leading-relaxed text-muted">
-          Nuru Technologies Pty Ltd is registered in Australia, with a sister
-          office in Uganda. We&apos;re a small team of builders, project managers,
-          and wedding veterans who care about the details.
+        <p className="py-16 text-center font-cormorant text-2xl italic leading-snug text-brass-dark lg:text-3xl">
+          Every wedding is a beautiful story. Yours belongs here.
         </p>
 
-        <div className="mt-16 flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           <Button href={appUrl("/sign-up")}>Start your trial</Button>
           <Button variant="ghost" href="/contact">
             Get in touch
