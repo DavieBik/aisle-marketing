@@ -350,7 +350,7 @@ export function PrivacyContent() {
           other data protection enquiries:
         </p>
         <p>hello@theaisleapp.com</p>
-        <p>Nuru Technologies Pty Ltd, Melbourne, Australia.</p>
+        <p>Nuru Technologies Pty Ltd.</p>
       </section>
     </>
   );
