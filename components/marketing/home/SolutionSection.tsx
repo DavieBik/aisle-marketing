@@ -34,8 +34,8 @@ export function SolutionSection() {
         <div className="relative mt-6 aspect-[21/9] w-full overflow-hidden rounded-sm">
           {/* TODO: replace with commissioned shot of wedding dining table */}
           <Image
-            src="https://images.unsplash.com/photo-1519225426285-abb61fc38eb4?w=1400&q=80"
-            alt="Long wedding reception table with candlelight, place settings, and warm ambient light"
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400&q=80"
+            alt="A long wedding reception table set with candles and place settings in warm light"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 896px"

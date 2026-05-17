@@ -106,7 +106,7 @@ export const FEATURES: Feature[] = [
     body: "The first vendor booked. The hundredth day to go. The last RSVP in. The Aisle App quietly notices and keeps a record of every small milestone that makes the year of getting married feel real.",
     image: {
       src: "https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Wedding journal with handwritten notes in warm light",
+      alt: "Open wedding journal with handwritten notes in warm light",
       width: 1200,
       height: 800,
     },

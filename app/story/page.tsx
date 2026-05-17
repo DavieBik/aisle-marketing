@@ -41,8 +41,8 @@ export default function StoryPage() {
         <div className="relative my-8 aspect-[16/10] overflow-hidden rounded-sm">
           {/* TODO: commissioned imagery OR appropriate lifestyle stock photography */}
           <Image
-            src="https://images.unsplash.com/photo-1516589178581-6cd7423ead9a?w=1200&q=80"
-            alt="Hands intertwined in soft natural light"
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80"
+            alt="A couple holding hands in soft natural light"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
