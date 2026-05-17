@@ -69,8 +69,8 @@ export const FEATURES: Feature[] = [
       'TBC is a valid amount. So is any currency, any figure, any "still figuring it out".',
     body: "Track every dollar and every pledge in whatever currency, whatever phase. From rough estimates to firm quotes to final spend. Free-text amounts that work the way real wedding budgets actually unfold.",
     image: {
-      src: "https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Notebook with handwritten budget figures and vintage pen",
+      src: "https://images.pexels.com/photos/4389416/pexels-photo-4389416.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      alt: "Wedding rings and flowers on a cream planning table",
       width: 1200,
       height: 800,
     },
@@ -93,8 +93,8 @@ export const FEATURES: Feature[] = [
     heading: "The day, held by the hour.",
     body: "A run sheet that knows who arrives when, who's responsible for what, and which moments cannot slip. Share it with vendors, the bridal party, parents. Print it for the day. The wedding holds itself.",
     image: {
-      src: "https://images.pexels.com/photos/5717412/pexels-photo-5717412.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Wedding day schedule and clock in warm morning light",
+      src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80",
+      alt: "A wedding reception table set and ready for the day",
       width: 1200,
       height: 800,
     },
@@ -105,8 +105,8 @@ export const FEATURES: Feature[] = [
     heading: "Your wedding remembers itself.",
     body: "The first vendor booked. The hundredth day to go. The last RSVP in. The Aisle App quietly notices and keeps a record of every small milestone that makes the year of getting married feel real.",
     image: {
-      src: "https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      alt: "Open wedding journal with handwritten notes in warm light",
+      src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&q=80",
+      alt: "A wedding planning notebook with handwritten notes.",
       width: 1200,
       height: 800,
     },

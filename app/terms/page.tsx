@@ -31,9 +31,9 @@ export default function TermsPage() {
       <section>
         <h2>Payment</h2>
         <p>
-          The Aisle App is free for couples during launch. If paid tiers are
-          introduced later, we will give notice before charging existing launch
-          couples for features they already use free.
+          Start with a 7-day free trial. After your trial, choose a one-off plan
+          ($100 USD) or a payment plan ($30 per month for four months). You can
+          cancel any time during your trial with no charge.
         </p>
       </section>
 

@@ -91,7 +91,7 @@ export default function PrivacyPage() {
         <h2>Spam Act 2003</h2>
         <p>
           Marketing emails require your consent. You may unsubscribe from
-          newsletter emails at any time using the link in each message.
+          promotional emails at any time using the link in each message.
         </p>
       </section>
     </LegalLayout>

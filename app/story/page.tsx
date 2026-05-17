@@ -68,7 +68,7 @@ export default function StoryPage() {
         </p>
 
         <div className="mt-16 flex flex-wrap justify-center gap-4">
-          <Button href={appUrl("/sign-up")}>Start free</Button>
+          <Button href={appUrl("/sign-up")}>Start your trial</Button>
           <Button variant="ghost" href="/contact">
             Get in touch
           </Button>

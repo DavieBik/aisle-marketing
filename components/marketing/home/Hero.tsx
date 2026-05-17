@@ -66,7 +66,7 @@ export function Hero({ hero = DEFAULT_HERO }: { hero?: HeroContent }) {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href={appUrl("/sign-up")} data-plausible-event="cta_get_started_clicked">
-                Start free
+                Start your trial
               </Button>
               <Button variant="ghost" href="#features">
                 See how it works
