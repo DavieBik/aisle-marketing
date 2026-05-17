@@ -2,81 +2,107 @@ import { FEATURES } from "./features";
 
 export type FeatureDetail = {
   id: string;
-  scenarios: string[];
+  howItWorks: string[];
+  scenarioCallout: string;
   extraImages?: { src: string; alt: string }[];
 };
 
 export const FEATURE_DETAILS: Record<string, FeatureDetail> = {
   guests: {
     id: "guests",
-    scenarios: [
-      "Tracking who attends the civil ceremony versus the traditional celebration.",
-      "Seating cousins from abroad at the reception without losing dietary notes.",
-      "Sending RSVP reminders only to guests who have not replied.",
+    howItWorks: [
+      "One master guest list with profiles for every person invited.",
+      "Separate RSVP and attendance lists per ceremony, reception, or after-party.",
+      "Dietary notes, plus-ones, children, and travel details attached to each guest.",
+      "Reminders sent only to guests who have not replied yet.",
     ],
-  },
-  ceremonies: {
-    id: "ceremonies",
-    scenarios: [
-      "Giving each ceremony its own guest list without duplicating work.",
-      "Holding dietary and seating notes separately for religious and reception events.",
-      "Keeping traditions and timelines distinct while still under one wedding home.",
-    ],
+    scenarioCallout:
+      "Priya's civil ceremony is on Saturday and the traditional celebration is Sunday. Half her guests attend both; some attend only one. She tracks who is where without three spreadsheets and a group chat that never stops buzzing.",
   },
   committee: {
     id: "committee",
-    scenarios: [
-      "Publishing meeting minutes within an hour of the committee adjourning.",
-      "Tracking pledges and fines from weekly committee gatherings.",
-      "Sharing a read-only link with elders who prefer not to use an account.",
+    howItWorks: [
+      "Schedule committee meetings and capture minutes in one shared record.",
+      "Track pledges, fines, and auctions with a clear running balance.",
+      "Distribute notes to attendees by email or a shareable link after each meeting.",
+      "Give elders read-only access when they prefer not to create an account.",
     ],
+    scenarioCallout:
+      "Carol's mother chairs the wedding committee. Every Tuesday meeting now ends in a shared note instead of a dozen separate WhatsApps. Everyone knows what was decided before they leave the table.",
+  },
+  ceremonies: {
+    id: "ceremonies",
+    howItWorks: [
+      "Create a separate ceremony for civil, religious, traditional, or reception events.",
+      "Give each ceremony its own guest list, seating, and dietary requirements.",
+      "Hold traditions and timelines for each event without duplicating your whole wedding.",
+      "See every ceremony in one home while keeping each one distinct.",
+    ],
+    scenarioCallout:
+      "Amir and Noor have a nikah, a civil signing, and a reception three weeks apart. Each event has its own guest list and run sheet, but they never rebuild the same details twice.",
   },
   registry: {
     id: "registry",
-    scenarios: [
-      "Listing cash funds alongside physical gifts for guests who prefer either.",
-      "Showing family in another country how to send via their preferred payment method.",
-      "Thanking everyone who pledged before the wedding weekend.",
+    howItWorks: [
+      "List physical gifts and cash funds side by side in one registry.",
+      "Let guests pay you directly via the methods your families already use.",
+      "See who pledged what so thank-yous are never guesswork.",
+      "The Aisle App never holds guest money — gifts go straight to you.",
     ],
+    scenarioCallout:
+      "Hannah's aunt in London prefers bank transfer; her cousins in Nairobi use mobile money. Guests choose what works for them, and Hannah sees every pledge in one place before the wedding weekend.",
   },
   budget: {
     id: "budget",
-    scenarios: [
-      "Leaving line items as TBC until quotes arrive from vendors.",
-      "Tracking spend in multiple currencies within one wedding home.",
-      "Moving estimates to firm quotes to final spend as decisions firm up.",
+    howItWorks: [
+      "Track line items from rough estimate to firm quote to final spend.",
+      "Enter amounts in any currency, including TBC while you are still deciding.",
+      "Record committee pledges alongside vendor invoices in one view.",
+      "Update figures as quotes arrive without rebuilding the whole sheet.",
     ],
+    scenarioCallout:
+      "Sofia's venue quote landed in euros, the caterer quoted in dollars, and the committee collects in local currency. She sees the full picture without converting tabs in a spreadsheet at midnight.",
   },
   stationery: {
     id: "stationery",
-    scenarios: [
-      "Uploading designs from your favourite tool and sending boutique emails in one step.",
-      "Sharing invitation links by text for guests who prefer WhatsApp.",
-      "Matching every outbound email to your wedding suite colours.",
+    howItWorks: [
+      "Upload invitations, save-the-dates, and signage from any design tool.",
+      "Send boutique emails dressed in your wedding's visual language.",
+      "Share invitation links by text for guests who prefer WhatsApp.",
+      "Keep every printed and digital touch feeling like one suite.",
     ],
+    scenarioCallout:
+      "Lily designed her invitations in Canva and her cousin designed the menus in Figma. Both upload to The Aisle App, and every email their guests receive looks like it came from the same wedding.",
   },
   timeline: {
     id: "timeline",
-    scenarios: [
-      "Sharing a run sheet with vendors and the bridal party the week before.",
-      "Printing a day-of timeline for parents and coordinators.",
-      "Flagging moments that cannot slip without rewriting the whole plan.",
+    howItWorks: [
+      "Build a run sheet with who arrives when and who is responsible for what.",
+      "Flag moments that cannot slip without rewriting the whole day.",
+      "Share the timeline with vendors, the bridal party, and parents.",
+      "Print a clean day-of version for coordinators on the ground.",
     ],
+    scenarioCallout:
+      "On the morning of the wedding, Marcus's coordinator opens one timeline on her phone. The florist, the MC, and the bridal party are all working from the same hour-by-hour plan.",
   },
   moments: {
     id: "moments",
-    scenarios: [
-      "Looking back at the first vendor booked months later.",
-      "Noticing when the last RSVP landed without refreshing a spreadsheet.",
-      "Keeping a quiet record of milestones through a long engagement.",
+    howItWorks: [
+      "Record milestones quietly as your engagement unfolds.",
+      "Notice when the first vendor is booked or the last RSVP arrives.",
+      "Look back at the small wins that made the year feel real.",
+      "Keep a timeline of moments without maintaining a separate journal.",
     ],
+    scenarioCallout:
+      "Jonah did not realise how many small wins they had until The Aisle App showed the first deposit paid, the hundredth day to go, and the last RSVP in — all in one calm record of their year.",
   },
 };
 
 export function getFeatureWithDetails() {
   return FEATURES.map((f) => ({
     ...f,
-    scenarios: FEATURE_DETAILS[f.id]?.scenarios ?? [],
+    howItWorks: FEATURE_DETAILS[f.id]?.howItWorks ?? [],
+    scenarioCallout: FEATURE_DETAILS[f.id]?.scenarioCallout ?? "",
     extraImages: FEATURE_DETAILS[f.id]?.extraImages,
   }));
 }

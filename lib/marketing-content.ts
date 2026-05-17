@@ -1,5 +1,6 @@
 import {
   createPublicSupabase,
+  createServiceSupabase,
   type HeroContent,
   type Testimonial,
 } from "@/lib/supabase";
@@ -19,9 +20,9 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     id: "fallback-1",
     display_order: 1,
     quote:
-      "It held our wedding the way a good friend would. Quietly, completely, without drama.",
+      "It's holding our wedding the way a good friend would. Quietly, completely, without drama.",
     author_name: "Amelia and Jonah",
-    author_role: "Married Dec 2026",
+    author_role: null,
     author_photo_url: null,
     updated_at: new Date().toISOString(),
     updated_by: null,
@@ -29,10 +30,9 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
   {
     id: "fallback-2",
     display_order: 2,
-    quote:
-      "My mother could finally help without us losing track of what she said yes to. That alone was worth it.",
-    author_name: "Priya and Daniel",
-    author_role: "Married Feb 2027",
+    quote: "I stopped having seven group chats. That alone is worth it.",
+    author_name: "Maya and Joseph",
+    author_role: null,
     author_photo_url: null,
     updated_at: new Date().toISOString(),
     updated_by: null,
@@ -41,9 +41,9 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     id: "fallback-3",
     display_order: 3,
     quote:
-      "We had family on three continents and an app that somehow made it feel small. We kept everything, even the thank-you notes.",
-    author_name: "Sofia and Marco",
-    author_role: "Married May 2027",
+      "My grandmother is on the committee from a different time zone and somehow it just works.",
+    author_name: "Lily and Sam",
+    author_role: "Planning for December 2026",
     author_photo_url: null,
     updated_at: new Date().toISOString(),
     updated_by: null,
@@ -52,9 +52,9 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     id: "fallback-4",
     display_order: 4,
     quote:
-      "We finally had one place that held the four ceremonies, the three sides of family, and the one thing nobody wanted to forget.",
-    author_name: "Wanjiru and Kwame",
-    author_role: "Married Aug 2027",
+      "My mother could finally help without us losing track of what she said yes to. And we just love the Registry!",
+    author_name: "Hannah and Oliver",
+    author_role: "Planning for February 2027",
     author_photo_url: null,
     updated_at: new Date().toISOString(),
     updated_by: null,
@@ -63,9 +63,9 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     id: "fallback-5",
     display_order: 5,
     quote:
-      "My grandmother is on the committee from a different time zone and somehow it just works.",
-    author_name: "Aanya and Theo",
-    author_role: "Married Mar 2027",
+      "We didn't realise how many spreadsheets we'd accumulated until they all became one calm thing.",
+    author_name: "Sofia and Marco",
+    author_role: "Planning for May 2027",
     author_photo_url: null,
     updated_at: new Date().toISOString(),
     updated_by: null,
@@ -73,9 +73,10 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
   {
     id: "fallback-6",
     display_order: 6,
-    quote: "I stopped having seven group chats. That alone was worth it.",
-    author_name: "Léa and Sam",
-    author_role: "Married Jul 2027",
+    quote:
+      "One couple has found me through the directory so far. They walked in already knowing my work. Looking forward to many more from The Aisle App.",
+    author_name: "Marcus",
+    author_role: "Wedding photographer",
     author_photo_url: null,
     updated_at: new Date().toISOString(),
     updated_by: null,
@@ -84,7 +85,12 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
 
 export async function getHeroContent(): Promise<HeroContent> {
   const supabase = createPublicSupabase();
-  if (!supabase) return FALLBACK_HERO;
+  if (!supabase) {
+    console.error(
+      "[marketing-content] hero fetch skipped: Supabase client not configured"
+    );
+    return FALLBACK_HERO;
+  }
 
   const { data, error } = await supabase
     .from("hero_content")
@@ -101,16 +107,32 @@ export async function getHeroContent(): Promise<HeroContent> {
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  const supabase = createPublicSupabase();
-  if (!supabase) return FALLBACK_TESTIMONIALS;
+  const supabase = createServiceSupabase();
+  if (!supabase) {
+    console.error(
+      "[marketing-content] testimonials fetch skipped: service role client not configured (check NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY)"
+    );
+    return FALLBACK_TESTIMONIALS;
+  }
 
   const { data, error } = await supabase
     .from("testimonials")
     .select("*")
     .order("display_order", { ascending: true });
 
-  if (error || !data?.length) {
-    console.error("[marketing-content] testimonials fetch failed", error?.message);
+  if (error) {
+    console.error(
+      "[marketing-content] testimonials fetch failed",
+      error.message,
+      error
+    );
+    return FALLBACK_TESTIMONIALS;
+  }
+
+  if (!data?.length) {
+    console.error(
+      "[marketing-content] testimonials fetch returned empty — using fallback data"
+    );
     return FALLBACK_TESTIMONIALS;
   }
 

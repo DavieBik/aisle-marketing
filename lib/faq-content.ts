@@ -26,7 +26,7 @@ export const MARKETING_FAQ = [
   {
     question: "Is my data safe?",
     answer:
-      "Yes. Your wedding is yours. We don't sell data, share with vendors, or mine your guest list. Hosted on encrypted infrastructure in compliance with Australian Privacy Act and GDPR.",
+      "Yes. Your wedding is yours. We don't sell data, share with vendors, or mine your guest list. Hosted on encrypted infrastructure with privacy compliance that meets the laws of where you live. Full details in our privacy policy.",
   },
   {
     question: "Who can see my guest list?",

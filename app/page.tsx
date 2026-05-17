@@ -7,6 +7,7 @@ import { SolutionSection } from "@/components/marketing/home/SolutionSection";
 import { StoriesSection } from "@/components/marketing/home/StoriesSection";
 import { TrustBar } from "@/components/marketing/home/TrustBar";
 import { Reveal } from "@/components/marketing/motion/Reveal";
+import { StackingSection } from "@/components/marketing/motion/StackingSection";
 import { getHeroContent, getTestimonials } from "@/lib/marketing-content";
 
 export const revalidate = 60;
@@ -23,24 +24,24 @@ export default async function Home() {
       <Reveal>
         <TrustBar />
       </Reveal>
-      <Reveal>
+      <StackingSection zIndex={10} className="bg-ivory">
         <ProblemSection />
-      </Reveal>
-      <Reveal>
+      </StackingSection>
+      <StackingSection zIndex={20} className="bg-cream">
         <SolutionSection />
-      </Reveal>
-      <Reveal>
+      </StackingSection>
+      <StackingSection zIndex={30} className="bg-ivory">
         <FeatureShowcase />
-      </Reveal>
-      <Reveal>
+      </StackingSection>
+      <StackingSection zIndex={40} className="bg-cream">
         <StoriesSection testimonials={testimonials} />
-      </Reveal>
-      <Reveal>
+      </StackingSection>
+      <StackingSection zIndex={50} className="bg-ivory">
         <FaqSection />
-      </Reveal>
-      <Reveal>
+      </StackingSection>
+      <StackingSection zIndex={60} className="bg-cream">
         <FinalCta />
-      </Reveal>
+      </StackingSection>
     </>
   );
 }

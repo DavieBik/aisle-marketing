@@ -16,19 +16,55 @@ function initials(name: string) {
     .toUpperCase();
 }
 
+function TestimonialCard({ t }: { t: Testimonial }) {
+  return (
+    <div className="h-full rounded-2xl bg-ivory p-6 shadow-[0_4px_24px_rgba(92,74,58,0.06)] lg:p-8">
+      {t.author_photo_url ? (
+        <div className="relative mb-5 h-12 w-12 overflow-hidden rounded-full">
+          <Image
+            src={t.author_photo_url}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="48px"
+            unoptimized={t.author_photo_url.includes("supabase.co")}
+          />
+        </div>
+      ) : (
+        <div
+          className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-sage font-cormorant text-lg text-ink"
+          aria-hidden
+        >
+          {initials(t.author_name)}
+        </div>
+      )}
+      <blockquote className="font-cormorant text-[17px] italic leading-relaxed text-ink lg:text-[19px]">
+        &ldquo;{t.quote}&rdquo;
+      </blockquote>
+      <p className="mt-5 font-outfit text-[13px] text-muted">
+        {t.author_name}
+        {t.author_role ? `, ${t.author_role}` : ""}
+      </p>
+    </div>
+  );
+}
+
 export function TestimonialCarousel({
   testimonials,
 }: {
   testimonials: Testimonial[];
 }) {
   const [selected, setSelected] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" }, [
-    Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true }),
-  ]);
+  const [snapCount, setSnapCount] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start", containScroll: "trimSnaps" },
+    [Autoplay({ delay: 6000, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelected(emblaApi.selectedScrollSnap());
+    setSnapCount(emblaApi.scrollSnapList().length);
   }, [emblaApi]);
 
   useEffect(() => {
@@ -46,72 +82,47 @@ export function TestimonialCarousel({
 
   return (
     <div
-      className="mx-auto max-w-xl"
+      className="mx-auto max-w-6xl"
       onMouseEnter={() => emblaApi?.plugins()?.autoplay?.stop()}
       onMouseLeave={() => emblaApi?.plugins()?.autoplay?.play()}
       onFocusCapture={() => emblaApi?.plugins()?.autoplay?.stop()}
       onBlurCapture={() => emblaApi?.plugins()?.autoplay?.play()}
     >
       <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex">
+        <div className="-ml-4 flex touch-pan-y">
           {testimonials.map((t) => (
             <article
               key={t.id}
-              className="min-w-0 shrink-0 grow-0 basis-full px-2"
+              className="min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2 lg:basis-1/3"
             >
-              <div className="rounded-2xl bg-ivory p-8 shadow-[0_4px_24px_rgba(92,74,58,0.06)]">
-                {t.author_photo_url ? (
-                  <div className="relative mb-6 h-12 w-12 overflow-hidden rounded-full">
-                    <Image
-                      src={t.author_photo_url}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="48px"
-                      unoptimized={t.author_photo_url.includes("supabase.co")}
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-sage font-cormorant text-lg text-ink"
-                    aria-hidden
-                  >
-                    {initials(t.author_name)}
-                  </div>
-                )}
-                <blockquote className="font-cormorant text-[19px] italic leading-relaxed text-ink">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <p className="mt-6 font-outfit text-[13px] text-muted">
-                  {t.author_name}
-                  {t.author_role ? `, ${t.author_role}` : ""}
-                </p>
-              </div>
+              <TestimonialCard t={t} />
             </article>
           ))}
         </div>
       </div>
 
-      <div
-        className="mt-8 flex justify-center gap-2"
-        role="tablist"
-        aria-label="Testimonials"
-      >
-        {testimonials.map((t, i) => (
-          <button
-            key={t.id}
-            type="button"
-            role="tab"
-            aria-selected={selected === i}
-            aria-label={`Testimonial ${i + 1} of ${testimonials.length}`}
-            onClick={() => emblaApi?.scrollTo(i)}
-            className={cn(
-              "h-2 w-2 rounded-full transition-colors",
-              selected === i ? "bg-brass" : "bg-sage"
-            )}
-          />
-        ))}
-      </div>
+      {snapCount > 1 && (
+        <div
+          className="mt-8 flex justify-center gap-2"
+          role="tablist"
+          aria-label="Testimonials"
+        >
+          {Array.from({ length: snapCount }, (_, i) => (
+            <button
+              key={i}
+              type="button"
+              role="tab"
+              aria-selected={selected === i}
+              aria-label={`Testimonial slide ${i + 1} of ${snapCount}`}
+              onClick={() => emblaApi?.scrollTo(i)}
+              className={cn(
+                "h-2 w-2 rounded-full transition-colors",
+                selected === i ? "bg-brass" : "bg-sage"
+              )}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

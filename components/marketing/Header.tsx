@@ -40,7 +40,7 @@ export function Header() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 bg-cream transition-shadow duration-300",
+          "sticky top-0 z-[100] bg-cream transition-shadow duration-300",
           scrolled &&
             "border-b border-sage/60 shadow-[0_4px_24px_rgba(92,74,58,0.06)]"
         )}

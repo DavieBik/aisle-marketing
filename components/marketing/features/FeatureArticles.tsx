@@ -29,21 +29,33 @@ export function FeatureArticles({ features }: { features: Feature[] }) {
               {feature.body}
             </p>
             <FeatureImages hero={hero} extras={extras} />
-            <aside className="mt-10 rounded-2xl bg-cream p-8">
-              <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
-                What couples use this for
-              </p>
-              <ul className="mt-4 space-y-3">
-                {feature.scenarios.map((s) => (
-                  <li
-                    key={s}
-                    className="font-outfit text-[15px] leading-relaxed text-ink"
-                  >
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+            {feature.howItWorks.length > 0 && (
+              <div className="mt-10">
+                <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
+                  How it works
+                </p>
+                <ul className="mt-4 list-disc space-y-3 pl-5 marker:text-brass">
+                  {feature.howItWorks.map((item) => (
+                    <li
+                      key={item}
+                      className="font-outfit text-[15px] leading-relaxed text-ink"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {feature.scenarioCallout && (
+              <aside className="mt-10 rounded-2xl border border-sage/40 bg-cream p-8">
+                <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
+                  Scenario
+                </p>
+                <p className="mt-4 font-outfit text-[15px] leading-relaxed text-ink">
+                  {feature.scenarioCallout}
+                </p>
+              </aside>
+            )}
           </article>
         );
 
