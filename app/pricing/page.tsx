@@ -56,11 +56,8 @@ export default function PricingPage() {
 
       <section className="bg-ivory pb-12 lg:pb-16">
         <Container>
-          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-            <article className="relative rounded-2xl bg-ivory p-8 shadow-[0_4px_32px_rgba(92,74,58,0.08)] ring-2 ring-brass/40 lg:p-10">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brass px-3 py-1 font-outfit text-[10px] font-medium uppercase tracking-widest text-ivory">
-                Most chosen
-              </span>
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:items-stretch">
+            <article className="flex h-full flex-col rounded-2xl bg-ivory p-8 shadow-[0_4px_32px_rgba(92,74,58,0.08)] ring-1 ring-sage/60 lg:p-10">
               <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
                 One-off
               </p>
@@ -72,14 +69,14 @@ export default function PricingPage() {
               <p className="mt-2 font-outfit text-sm text-muted">
                 Charged after your 7-day trial.
               </p>
-              <div className="mt-8">
+              <div className="mt-auto pt-8">
                 <Button href={SIGNUP_URL} className="w-full justify-center">
                   Start your trial
                 </Button>
               </div>
             </article>
 
-            <article className="rounded-2xl bg-ivory p-8 shadow-[0_4px_32px_rgba(92,74,58,0.08)] ring-1 ring-sage/60 lg:p-10">
+            <article className="flex h-full flex-col rounded-2xl bg-ivory p-8 shadow-[0_4px_32px_rgba(92,74,58,0.08)] ring-1 ring-sage/60 lg:p-10">
               <p className="font-outfit text-[11px] font-medium uppercase tracking-widest text-brass">
                 Payment plan
               </p>
@@ -87,7 +84,10 @@ export default function PricingPage() {
                 Payment plan
               </h2>
               <p className="mt-4 font-cormorant text-4xl text-ink">
-                $30 × 4 = $120
+                $30 per month
+              </p>
+              <p className="mt-2 font-outfit text-sm text-muted">
+                For four months. $120 total.
               </p>
               <p className="mt-4 font-outfit text-[15px] leading-relaxed text-muted">
                 Spread the cost across your engagement. Final payment 30 days
@@ -96,7 +96,7 @@ export default function PricingPage() {
               <p className="mt-2 font-outfit text-sm text-muted">
                 Available for weddings 5 months or more away.
               </p>
-                            <div className="mt-8">
+              <div className="mt-auto pt-8">
                 <Button href={SIGNUP_URL} className="w-full justify-center">
                   Start your trial
                 </Button>
