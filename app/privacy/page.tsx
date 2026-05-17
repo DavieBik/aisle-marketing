@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      lastUpdated="Last updated: 17 May 2026"
+      lastUpdated="Last updated: 1 April 2026"
     >
       <PrivacyContent />
     </LegalLayout>

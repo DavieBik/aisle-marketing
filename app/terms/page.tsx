@@ -11,7 +11,7 @@ export default function TermsPage() {
   return (
     <LegalLayout
       title="Terms of Service"
-      lastUpdated="Last updated: 17 May 2026"
+      lastUpdated="Last updated: 1 April 2026"
     >
       <TermsContent />
     </LegalLayout>
