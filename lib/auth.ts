@@ -1,3 +1,4 @@
+import { SupabaseAdapter } from "@auth/supabase-adapter";
 import { getAdminEmails } from "@/lib/admin-emails";
 import type { NextAuthOptions } from "next-auth";
 import EmailProvider from "next-auth/providers/email";
@@ -7,7 +8,15 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
+function createAdminAuthAdapter() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const secret = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !secret) return undefined;
+  return SupabaseAdapter({ url, secret });
+}
+
 export const authOptions: NextAuthOptions = {
+  adapter: createAdminAuthAdapter(),
   providers: [
     EmailProvider({
       from: "The Aisle App <hello@theaisleapp.com>",
