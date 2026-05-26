@@ -65,12 +65,16 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-full flex-col font-outfit">
         {plausibleDomain && (
-          <Script
-            defer
-            data-domain={plausibleDomain}
-            src="https://plausible.io/js/script.js"
-            strategy="afterInteractive"
-          />
+          <>
+            <Script
+              async
+              src="https://plausible.io/js/pa-uBR_uENPxww9pooekFtCz.js"
+              strategy="afterInteractive"
+            />
+            <Script id="plausible-init" strategy="afterInteractive">
+              {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
+            </Script>
+          </>
         )}
         <MarketingChrome>{children}</MarketingChrome>
       </body>
