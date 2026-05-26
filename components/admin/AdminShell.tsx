@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import { cn } from "@/lib/cn";
 
 const NAV = [
   { href: "/admin", label: "Dashboard" },
@@ -12,9 +13,11 @@ const NAV = [
 export async function AdminShell({
   children,
   title,
+  wide = false,
 }: {
   children: React.ReactNode;
   title?: string;
+  wide?: boolean;
 }) {
   const session = await getServerSession(authOptions);
 
@@ -52,9 +55,21 @@ export async function AdminShell({
           </nav>
         </div>
       </header>
-      <div className="mx-auto max-w-6xl px-6 py-10">
+      <div
+        className={cn(
+          "mx-auto py-10",
+          wide ? "w-full max-w-none px-0" : "max-w-6xl px-6",
+        )}
+      >
         {title && (
-          <h1 className="mb-8 font-cormorant text-4xl text-ink">{title}</h1>
+          <h1
+            className={cn(
+              "mb-8 font-cormorant text-4xl text-ink",
+              wide && "px-6",
+            )}
+          >
+            {title}
+          </h1>
         )}
         {children}
       </div>
